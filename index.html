@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Webpage that displays a countdown until christmas">
+    <meta name="author" content="Jesús Neri">
+
+    <title>Cuenta regresiva para Navidad</title>
+    
+    <link rel="icon" href="img/arbol.ico">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="main">
+
+    <div class="container white font">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1><red class="red">Christmas</red> <green class="green">Countdown</green></h1>
+                
+            </div>
+        </div>
+        <div class="row second-row">
+            <div class="col-md-6 text-center">
+                <h3 id="count-top" class="green">Solo faltan</h3>
+                <div id="countdown">
+                    <h1 class="red"><b id="days" class="green"></b> Días</h1>
+                    <h1 class="green"><b id="hours" class="red"></b> Horas</h1>
+                    <h1 class="red"><b id="mins" class="green"></b> Minutos</h1>
+                    <h1 class="green"><b id="secs" class="red"></b> Segundos</h1>
+                </div>
+                <h3 id="until" class="red">para Navidad</h3>
+                <div class="visible-xs visible-sm"><br><br><br></div>
+            </div>
+            <div class="col-md-6 text-center hidden-sm hidden-xs">
+                <canvas id="scene" width="410px" height="500px" class="tree"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="footer" class="font">
+        <p><a href="https://github.com/nerideveloper13" class="red">Jesús Neri</a> | <a href="https://github.com/nerideveloper13" class="green">Feliz Navidad</a> </p>
+    </footer>
+    
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Tree -->
+    <script src="js/tree.js"></script>
+    
+    <!-- Snowfall -->
+    <script src="js/snowfall.min.js"></script>
+    
+    <!-- Countdown -->
+    <script src="js/countdown.js"></script>
+    
+    <script type='text/javascript'>     
+        $(document).ready(function(){
+            
+            // tree (not on mobile)
+            if ($("#scene").is(":visible")){
+                run();
+            }
+            
+            // snowfall 
+            $(document).snowfall('clear');
+            document.body.className  = "main";
+            $(document).snowfall({image :"img/flake.png", minSize: 6, maxSize:15});
+            
+            // countdown
+            start();
+        });
+    </script>
+
+</body>
+
+</html>
